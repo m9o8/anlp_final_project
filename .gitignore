@@ -11,3 +11,6 @@ wheels/
 
 # Data
 data/
+
+# Bert outputs
+results*/
