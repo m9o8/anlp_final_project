@@ -10,9 +10,11 @@ dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.10.3",
     "pandas>=2.3.0",
+    "polars>=1.30.0",
     "pyarrow>=20.0.0",
     "ruff>=0.11.13",
     "scikit-learn>=1.7.0",
+    "seaborn>=0.13.2",
 ]
 
 [dependency-groups]
