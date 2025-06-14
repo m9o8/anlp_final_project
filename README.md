@@ -38,6 +38,7 @@ These metrics give a more balanced view than accuracy alone.
 <img src="results/plots/class_imbalance.png" alt="Text Length Distribution" 
 width="80%"/>
 </div>
+
 Patent documents are inherently long and verbose, often containing multiple sections like the title, abstract, description, and claims. As shown below, their lengths vary widely—with a heavily **right-skewed** distribution across all classes, and some texts reaching up to 80,000 tokens.
 
 This extreme variability poses computational and modeling challenges, especially for transformer models limited to shorter input lengths.
