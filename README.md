@@ -28,17 +28,33 @@ Originally designed for **abstractive summarization**, this dataset is repurpose
 
 ### 📊 Dataset Distribution
 
-Below we show the class distribution across the training, validation, and test sets. As seen, the dataset is highly imbalanced, which poses challenges during training and evaluation.
+The dataset shows strong class imbalance, with most patents concentrated in a few categories—especially from fast-evolving fields like electronics and healthcare. This is common in patent corpora and follows a Pareto-like distribution, as noted by [Benzineb & Guyot (2011)](#ref1).
 
-![Class Distribution by Split](results/plots/class_imbalance.png)
+To fairly evaluate performance, we use **Macro F1** that treats all classes equally, highlighting minority performance and **Micro F1** that favors frequent classes by aggregating across all samples.
 
-Patent documents also vary widely in length, often exceeding the input limits of many standard transformer models. The plot below illustrates this variation across classes:
+These metrics give a more balanced view than accuracy alone.
 
-![Text Length Distribution](results/plots/text_lenght_distribution.png)
+<div align="center">
+<img src="results/plots/class_imbalance.png" alt="Text Length Distribution" 
+width="80%"/>
+</div>
+Patent documents are inherently long and verbose, often containing multiple sections like the title, abstract, description, and claims. As shown below, their lengths vary widely—with a heavily **right-skewed** distribution across all classes, and some texts reaching up to 80,000 tokens.
 
-To explore vocabulary differences across categories, the following wordclouds highlight frequently occurring terms in each class. These suggest that fine-grained domain-specific language may be crucial for effective classification.
+This extreme variability poses computational and modeling challenges, especially for transformer models limited to shorter input lengths.
 
-![Wordcloud by Class](results/plots/wordcloud.png)
+<div align="center">
+  <img src="results/plots/text_lenght_distribution.png" alt="Text Length Distribution" width="80%"/>
+</div>
+
+
+To explore vocabulary differences across categories, the following word clouds visualize the most frequent terms per class. While **domain-specific terms** clearly emerge, many words are **shared across categories**, introducing ambiguity and making it harder for models to distinguish between classes. Additionally, patents often contain **dense scientific language** and are **intentionally phrased in complex or obfuscated ways**—either to avoid plagiarism or obscure related inventions. These characteristics amplify the challenge of accurate classification, as key signals may be both rare and linguistically subtle.
+
+
+
+
+<div align="center">
+  <img src="results/plots/wordcloud.png" alt="Text Length Distribution" width="80%"/>
+</div>
 
 ---
 
@@ -62,18 +78,18 @@ Below is a comparison of recent studies tackling the patent classification task 
 
 | Model / Method                     | Dataset Used                                   | #Classes | Performance                  | Reference |
 |----------------------------------|--------------------------------------------------|----------|------------------------------|-----------|
-| RoBERTa (512 tokens)             | ccdv/patent-classification                       | CPC  (9) | 66.6 / 61.8  (Micro / Macro) | [Condevaux & Harispe (2023)](#ref1) |
-| LSG-Norm Attention (128/4)       | ccdv/patent-classification                       | CPC  (9) | 70.0 / 64.4  (Micro / Macro) | [Condevaux & Harispe (2023)](#ref1) |
+| RoBERTa (512 tokens)             | ccdv/patent-classification                       | CPC  (9) | 66.6 / 61.8  (Micro / Macro) | [Condevaux & Harispe (2023)](#ref2) |
+| LSG-Norm Attention (128/4)       | ccdv/patent-classification                       | CPC  (9) | 70.0 / 64.4  (Micro / Macro) | [Condevaux & Harispe (2023)](#ref3) |
 | PatentBERT                       | USPTO-3M (claims only)                           | CPC  (9) | 66.80   (F1)                 | [Lee & Hsiang (2020)](#ref2) |
-| Optimized Neural Networks (MLP)  | WIPO-alpha (English patents)                     | CPC  (9) | —      (Accuracy)            | [Abdelgawad et al. (2022)](#ref3) |
+| Optimized Neural Networks (MLP)  | WIPO-alpha (English patents)                     | CPC  (9) | —      (Accuracy)            | [Abdelgawad et al. (2022)](#ref4) |
 
 ---
 
 ## 📚 References
-
-<a id="ref1"></a>**[1]** Condevaux, C. & Harispe, S. (2023). *LSG Attention: Extrapolation of pretrained Transformers to long sequences*.  
-<a id="ref2"></a>**[2]** Lee, J.-S., & Hsiang, J. (2020). *Patent classification by fine-tuning BERT language model*.  
-<a id="ref3"></a>**[3]** Abdelgawad, L., Kluegl, P., Genc, E., Falkner, S., & Hutter, F. (2022). *Optimizing Neural Networks for Patent Classification*.  
+<a id="ref1"></a>**[1]** Benzineb & Guyot (2011). *Automated Patent Classification*.  
+<a id="ref2"></a>**[1]** Condevaux, C. & Harispe, S. (2023). *LSG Attention: Extrapolation of pretrained Transformers to long sequences*.  
+<a id="ref3"></a>**[2]** Lee, J.-S., & Hsiang, J. (2020). *Patent classification by fine-tuning BERT language model*.  
+<a id="ref4"></a>**[3]** Abdelgawad, L., Kluegl, P., Genc, E., Falkner, S., & Hutter, F. (2022). *Optimizing Neural Networks for Patent Classification*.  
 
 ---
 
