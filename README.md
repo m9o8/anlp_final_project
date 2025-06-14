@@ -30,15 +30,15 @@ Originally designed for **abstractive summarization**, this dataset is repurpose
 
 Below we show the class distribution across the training, validation, and test sets. As seen, the dataset is highly imbalanced, which poses challenges during training and evaluation.
 
-![Class Distribution by Split](images/class_distribution.png)
+![Class Distribution by Split](results/plots/class_imbalance.png)
 
 Patent documents also vary widely in length, often exceeding the input limits of many standard transformer models. The plot below illustrates this variation across classes:
 
-![Text Length Distribution](images/length_distribution.png)
+![Text Length Distribution](results/plots/text_lenght_distribution.png)
 
 To explore vocabulary differences across categories, the following wordclouds highlight frequently occurring terms in each class. These suggest that fine-grained domain-specific language may be crucial for effective classification.
 
-![Wordcloud by Class](images/wordclouds_3x3.png)
+![Wordcloud by Class](results/plots/wordcloud.png)
 
 ---
 
