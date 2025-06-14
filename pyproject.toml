@@ -3,16 +3,31 @@ name = "anlp-final"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
+    "accelerate>=1.7.0",
+    "datasets>=3.6.0",
+    "evaluate>=0.4.3",
     "fastparquet>=2024.11.0",
     "huggingface-hub>=0.33.0",
     "jupyter>=1.1.1",
     "matplotlib>=3.10.3",
+    "nltk>=3.9.1",
     "pandas>=2.3.0",
+    "pip>=25.1.1",
+    "polars>=1.30.0",
+    "ptitprince>=0.2.5",
     "pyarrow>=20.0.0",
     "ruff>=0.11.13",
     "scikit-learn>=1.7.0",
+    "seaborn>=0.13.2",
+    "spacy>=3.8.7",
+    "staticvectors>=0.2.0",
+    "tensorflow==2.19.0",
+    "tf-keras>=2.19.0",
+    "torch==2.7.0",
+    "transformers==4.52.3",
+    "wordcloud>=1.9.4",
 ]
 
 [dependency-groups]
