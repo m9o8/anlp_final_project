@@ -21,12 +21,14 @@ dependencies = [
     "ruff>=0.11.13",
     "scikit-learn>=1.7.0",
     "seaborn>=0.13.2",
+    "setfit>=1.1.2",
     "spacy>=3.8.7",
     "staticvectors>=0.2.0",
     "tensorflow==2.19.0",
     "tf-keras>=2.19.0",
     "torch==2.7.0",
     "transformers==4.52.3",
+    "transformers-interpret>=0.10.0",
     "wordcloud>=1.9.4",
 ]
 
