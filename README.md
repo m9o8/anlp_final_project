@@ -146,7 +146,10 @@ The final section applies the best-performing techniques from previous experimen
 
 Final results are compared against the baseline and previous models, demonstrating the effectiveness of these techniques in improving classification performance, cf.:
 
-![task2_results](./results/plots/task2/final_task2.svg)
+<div align="center">
+  <img src="results/plots/task2/final_task2.svg" alt="Task 2 Results Classifier Perf" width="80%"/>
+</div>
+
 
 **Core Finding:** RoBERTa's bidirectional encoder architecture achieved 29.20% accuracy with 32 training samples, reaching 41.46% when combined with SetFit's contrastive sentence transformer approach compared to approx. 66% SOA with older BERT models ([Lee, J.-S., & Hsiang, J., 2020](https://www.sciencedirect.com/science/article/pii/S0172219019300742)) and current state-of-the-art performance (73-84%, [Bekamiri H. et al., 2024](https://www.sciencedirect.com/science/article/pii/S0040162524003329)) while using <1% of typical training data (32 vs 3,000+ samples per class).
 
@@ -165,7 +168,9 @@ Final results are compared against the baseline and previous models, demonstrati
 ---
 ## [🎨 Part 3: State of the Art Comparison](./code/task3.ipynb)
 
-![task_3_learning_curves](./results/plots/task3/learning_curve_f1_scores.png)
+<div align="center">
+  <img src="results/plots/task3/learning_curve_f1_scores.png" alt="Learning Curve" width="80%"/>
+</div>
 
 The image above illustrates the performance of RoBERTa on patent classification as a function of the proportion of training data used. Notably, training with just 10% of the data already achieves a Weighted F1 score of nearly 60%, and using 50% boosts this to approximately 67%. Beyond this point, additional data yields diminishing returns, with the score plateauing around 66–67%, and reaching about 69% at full training capacity.
 
