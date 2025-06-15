@@ -31,7 +31,7 @@ The dataset shows strong class imbalance, with most patents concentrated in a fe
 To evaluate performance on our imbalanced dataset, we use the **Weighted F1** score. It accounts for both precision and recall across all classes, while weighting each class by its frequency—providing a balanced view that reflects real-world class distributions.
 
 <div align="center">
-<img src="results/plots/task1/class_imbalance.png" alt="Text Length Distribution" 
+<img src="results/plots/task1/class_imbalance.png" alt="Text Length Distribution"
 width="80%"/>
 </div>
 
@@ -90,7 +90,6 @@ Below is a comparison of recent studies tackling the patent classification task 
 | Linguistically-Supported KNN | CLEF-IP Dataset (699K patents)                  | CPC/IPC | Comparable to fastText      | [Yadrintsev et al. (2018)](#ref5) |
 | Optimized Neural Networks (MLP)  | WIPO-alpha (English patents)                     | CPC  (9) | —      (Accuracy)            | [Abdelgawad et al. (2022)](#ref6) |
 
-
 While previous work leverages large-scale datasets and high-compute environments to push the limits of model performance, our goal is to **replicate and benchmark results under realistic constraints**. Unlike studies using millions of patents or custom attention mechanisms (e.g., LSG-Norm), we focus on **pretrained Transformer models like RoBERTa**. Given our limited computational resources and time, our objective is to **evaluate how well standard models perform out-of-the-box** on this challenging task and understand their limitations in a resource-constrained setting.
 
 ---
@@ -115,7 +114,7 @@ This progression confirms that **each added layer of linguistic complexity contr
 
 ## [🤖 Part 2: RoBERTa Model with Limited Data](./code/task2.ipynb)
 
-_Discaimer: this part of the submission was created on Google Colab. The notebooks from Colab currently face an [open issue](https://github.com/googlecolab/colabtools/issues/5256#issuecomment-2795231057) on GitHub and can't often be rendered and hence properly displayed. We fixed the notebook, but the fix leads to HuggingFace progress bars not being displayed correctly. The GitHub version of the notebook also, doesn't support word highlighting of the `bert_interpretability_analysis()`, but this works locally._
+_Discaimer: from here on all notebooks were created on Google Colab. The notebooks from Colab currently face an [open issue](https://github.com/googlecolab/colabtools/issues/5256#issuecomment-2795231057) on GitHub and can't often be rendered and hence properly displayed. We fixed the notebooks, but the fix leads to HuggingFace progress bars not being displayed correctly. The GitHub version of the notebooks also, doesn't support word highlighting of the `bert_interpretability_analysis()`, but this still works locally._
 
  Building on the previous experiments, which showed strong performance given their simplicity, we now turn to contextual language models—specifically RoBERTa, that is designed to capture rich semantic and syntactic dependencies, which may be especially valuable for domain-specific and complex texts like patents.
 
@@ -150,7 +149,6 @@ Final results are compared against the baseline and previous models, demonstrati
   <img src="results/plots/task2/final_task2.svg" alt="Task 2 Results Classifier Perf" width="80%"/>
 </div>
 
-
 **Core Finding:** RoBERTa's bidirectional encoder architecture achieved 29.20% accuracy with 32 training samples, reaching 41.46% when combined with SetFit's contrastive sentence transformer approach compared to approx. 66% SOA with older BERT models ([Lee, J.-S., & Hsiang, J., 2020](https://www.sciencedirect.com/science/article/pii/S0172219019300742)) and current state-of-the-art performance (73-84%, [Bekamiri H. et al., 2024](https://www.sciencedirect.com/science/article/pii/S0040162524003329)) while using <1% of typical training data (32 vs 3,000+ samples per class).
 
 **Technical Limitations Identified:**
@@ -166,6 +164,7 @@ Final results are compared against the baseline and previous models, demonstrati
 - LLM-generated synthetic data (+6.96pp improvement) outperformed structural augmentation (+3.12pp), suggesting content quality matters more in our scenario than data quantity in transformer training.
 
 ---
+
 ## [🎨 Part 3: State of the Art Comparison](./code/task3.ipynb)
 
 <div align="center">
@@ -177,15 +176,17 @@ The image above illustrates the performance of RoBERTa on patent classification 
 Overall, RoBERTa demonstrates strong performance that approaches state-of-the-art (SOA) benchmarks, despite utilizing fewer computational resources and less training data compared to the SOA models. This highlights RoBERTa's efficiency and robustness for the task.
 
 ---
-## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
 
+## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
 
 This section focuses on optimizing the best-performing RoBERTa model for **faster and lighter inference** using **knowledge distillation** and **half-precision (FP16) quantization**.
 
 ### 🔄 Knowledge Distillation
+
 We trained a compact **DistilBERT student model** to mimic the teacher model's predictions via a custom `DistillationTrainer`. This combines supervised cross-entropy loss with a **Kullback-Leibler divergence** between the teacher’s and student’s soft predictions. The combination of `α = 0.5` and `temperature = 4.0` allows the student to learn both from ground-truth labels and the richer output distribution of the teacher.
 
 ### ⚡ FP16 Quantization (Half Precision)
+
 To reduce inference latency and memory usage on GPU, we applied **FP16 quantization** by converting the model to half-precision. Unlike PyTorch’s dynamic quantization (which was initially tested for CPU), **FP16 was ultimately used for evaluation and comparison**, as it allows full GPU acceleration with no retraining required.
 
 This quantization was applied to both the original RoBERTa and the distilled DistilBERT model, resulting in four variants:
@@ -209,14 +210,12 @@ This quantization was applied to both the original RoBERTa and the distilled Dis
 
 ## 📚 References
 
-1. <a id="ref1"></a>Bekamiri, H., Hain, D. S., & Jurowetzki, R. (2024). PatentSBERTa: A deep NLP based hybrid model for patent distance and classification using augmented SBERT. *Technological Forecasting and Social Change*, 206, 123536.
+1. <a id="ref1"></a>Bekamiri, H., Hain, D. S., & Jurowetzki, R. (2024). PatentSBERTa: A deep NLP based hybrid model for patent distance and classification using augmented SBERT. _Technological Forecasting and Social Change_, 206, 123536.
 2. <a id="ref2"></a>Condevaux, C., & Harispe, S. (2023). LSG-Norm Attention for patent classification.
 3. <a id="ref3"></a>Condevaux, C., & Harispe, S. (2023). RoBERTa for patent classification.
 4. <a id="ref4"></a>Lee, J. S., & Hsiang, J. (2020). PatentBERT: Patent classification with fine-tuning a pre-trained BERT model.
 5. <a id="ref5"></a>Yadrintsev, V., Bakarov, A., Suvorov, R., & Sochenkov, I. (2018). Fast and accurate patent classification in search engines.
 6. <a id="ref6"></a>Abdelgawad, L., et al. (2022). Optimized neural networks for patent classification.
-
-
 
 ## ⚙️ Project Structure
 
