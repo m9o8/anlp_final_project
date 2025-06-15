@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "accelerate>=1.7.0",
     "datasets>=3.6.0",
+    "dotenv>=0.9.9",
     "evaluate>=0.4.3",
     "fastparquet>=2024.11.0",
     "huggingface-hub>=0.33.0",
