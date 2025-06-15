@@ -15,4 +15,4 @@ data/
 .vscode
 .DS_Store
 
-results/
+code/results/
