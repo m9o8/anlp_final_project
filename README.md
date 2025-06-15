@@ -1,7 +1,7 @@
 <h1 align="center">Patent Classification with Transformers</h1>
 <h2 align="center">Advanced NLP - Final Project</h2>
 <p align="center">
-  <b>Ferran Boada Bergadá, Lucia Sauer, Julian Romero & Moritz Peist</b><br>
+  <b>Ferran Boada Bergadà, Lucia Sauer, Julian Romero & Moritz Peist</b><br>
   Barcelona School of Economics · 2025
 </p>
 
@@ -179,6 +179,33 @@ Overall, RoBERTa demonstrates strong performance that approaches state-of-the-ar
 ---
 ## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
 
+
+This section focuses on optimizing the best-performing RoBERTa model for **faster and lighter inference** using **knowledge distillation** and **half-precision (FP16) quantization**.
+
+### 🔄 Knowledge Distillation
+We trained a compact **DistilBERT student model** to mimic the teacher model's predictions via a custom `DistillationTrainer`. This combines supervised cross-entropy loss with a **Kullback-Leibler divergence** between the teacher’s and student’s soft predictions. The combination of `α = 0.5` and `temperature = 4.0` allows the student to learn both from ground-truth labels and the richer output distribution of the teacher.
+
+### ⚡ FP16 Quantization (Half Precision)
+To reduce inference latency and memory usage on GPU, we applied **FP16 quantization** by converting the model to half-precision. Unlike PyTorch’s dynamic quantization (which was initially tested for CPU), **FP16 was ultimately used for evaluation and comparison**, as it allows full GPU acceleration with no retraining required.
+
+This quantization was applied to both the original RoBERTa and the distilled DistilBERT model, resulting in four variants:
+
+1. **Original RoBERTa (FP32)**
+2. **Quantized (Original + FP16)**
+3. **Distilled Student (FP32)**
+4. **Quantized Distilled (Student + FP16)**
+
+### 📊 Final Comparison Table
+
+<div align="center">
+  <img src="results/plots/task4/final_comparison_table.png" alt="Final Model Comparison Table" width="80%"/>
+</div>
+
+- **Size**: Quantized Distilled is the smallest model at just 134 MB (~73% smaller than the original).
+- **Speed**: Inference time drops drastically—Quantized Distilled is ~9× faster than the original.
+- **Performance**: The distilled variants show a ~7.5pp drop in F1 score but actually gain slightly in **precision**, indicating more conservative classification behavior for 8 of the 9 labels.
+
+---
 
 ## 📚 References
 
