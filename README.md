@@ -34,7 +34,7 @@ To evaluate performance on our imbalanced dataset, we use the **Weighted F1** sc
 
 
 <div align="center">
-<img src="results/plots/class_imbalance.png" alt="Text Length Distribution" 
+<img src="results/plots/task1/class_imbalance.png" alt="Text Length Distribution" 
 width="80%"/>
 </div>
 
@@ -53,8 +53,8 @@ Thus, focusing on abstracts offers a practical trade-off between model efficienc
 
 <table>
   <tr>
-    <td><img src="results/plots/text_lenght_distribution_fulltext.png" alt="Full Text" width="100%"/></td>
-    <td><img src="results/plots/text_lenght_distribution_abstracts.png" alt="Abstracts" width="100%"/></td>
+    <td><img src="results/plots/task1/text_lenght_distribution_fulltext.png" alt="Full Text" width="100%"/></td>
+    <td><img src="results/plots/task1/text_lenght_distribution_abstracts.png" alt="Abstracts" width="100%"/></td>
   </tr>
 </table>
 
@@ -65,7 +65,7 @@ To explore vocabulary differences across categories, the following word clouds v
 
 
 <div align="center">
-  <img src="results/plots/wordcloud.png" alt="Text Length Distribution" width="80%"/>
+  <img src="results/plots/task1/wordcloud.png" alt="Text Length Distribution" width="80%"/>
 </div>
 
 ---
@@ -109,7 +109,7 @@ To establish a **baseline**, we begin by evaluating the performance of several *
 * **Word2Vec + RNN**: Leverages sequential modeling of dense word embeddings to capture contextual patterns in the text.
 
 <div align="center">
-  <img src="results/plots/random_classifier_perfpng.png" alt="Random Classifier Perf" width="80%"/>
+  <img src="results/plots/task1/random_classifier_perfpng.png" alt="Random Classifier Perf" width="80%"/>
 </div>
 
 
