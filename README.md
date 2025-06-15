@@ -1,7 +1,7 @@
 <h1 align="center">Patent Classification with Transformers</h1>
 <h2 align="center">Advanced NLP - Final Project</h2>
 <p align="center">
-  <b>Ferran Boada Bergadá, Lucia Sauer, Julian Romero & Moritz Peist</b><br>
+  <b>Ferran Boada Bergadà, Lucia Sauer, Julian Romero & Moritz Peist</b><br>
   Barcelona School of Economics · 2025
 </p>
 
