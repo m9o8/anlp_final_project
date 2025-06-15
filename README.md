@@ -200,7 +200,7 @@ anlp_final_project/
 │   │── 📓 task2.ipynb          # Solution to Part 2  
 │   │── 📓 task3.ipynb          # Solution to Part 3  
 │   │── 📓 task4.ipynb          # Solution to Part 4
-│   │── 🧰 utils.py             # Solution to Part 4
+│   │── 🧰 utils.py             # Utilities
 ├── results/                    # Plots and model evaluations
 │   ├── plots/
 ├── uv.lock                     # Environment UV lock file
