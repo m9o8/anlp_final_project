@@ -194,5 +194,5 @@ def train_and_predict(dataset, model, args, results_object, prop, model_ckpt, nu
 
     y_pred = np.argmax(predictions.predictions, axis=1)
     y_true = predictions.label_ids
-    results_object.run(y_true, y_pred, f'D-BERT ({prop})', average='weighted')
+    results_object.run(y_true, y_pred, f'ROBERTA on {int(prop*100)}%', average='weighted')
     return results_object, y_pred.tolist(), y_true.tolist()
