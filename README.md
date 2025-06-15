@@ -1,13 +1,12 @@
 <h1 align="center">Patent Classification with Transformers</h1>
+<h2 align="center">Advanced NLP - Final Project</h2>
 <p align="center">
-  <b>Advanced NLP - Final Project</b><br>
   <b>Ferran Boada Bergadá, Lucia Sauer, Julian Romero & Moritz Peist</b><br>
   Barcelona School of Economics · 2025
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.10-blue?logo=python">
-
+  <img src="https://img.shields.io/badge/python-3.12-blue?logo=python">
   <img src="https://img.shields.io/badge/BERT-NLP%20Model-9cf?logo=google&logoColor=white" />
   <img src="https://img.shields.io/badge/Transformers-HuggingFace-yellow?logo=huggingface&logoColor=black" />
 
@@ -168,6 +167,9 @@ Final results are compared against the baseline and previous models, demonstrati
 
 ![task_3_learning_curves](./results/plots/task3/learning_curve_f1_scores.png)
 
+The image above illustrates the performance of RoBERTa on patent classification as a function of the proportion of training data used. Notably, training with just 10% of the data already achieves a Weighted F1 score of nearly 60%, and using 50% boosts this to approximately 64%. Beyond this point, additional data yields diminishing returns, with the score plateauing around 66–67%, and reaching about 69% at full training capacity.
+
+Overall, RoBERTa demonstrates strong performance that approaches state-of-the-art (SOA) benchmarks, despite utilizing fewer computational resources and less training data compared to the SOA models. This highlights RoBERTa's efficiency and robustness for the task.
 
 ---
 ## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
