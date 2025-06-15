@@ -167,7 +167,7 @@ Final results are compared against the baseline and previous models, demonstrati
 
 ![task_3_learning_curves](./results/plots/task3/learning_curve_f1_scores.png)
 
-The image above illustrates the performance of RoBERTa on patent classification as a function of the proportion of training data used. Notably, training with just 10% of the data already achieves a Weighted F1 score of nearly 60%, and using 50% boosts this to approximately 64%. Beyond this point, additional data yields diminishing returns, with the score plateauing around 66–67%, and reaching about 69% at full training capacity.
+The image above illustrates the performance of RoBERTa on patent classification as a function of the proportion of training data used. Notably, training with just 10% of the data already achieves a Weighted F1 score of nearly 60%, and using 50% boosts this to approximately 67%. Beyond this point, additional data yields diminishing returns, with the score plateauing around 66–67%, and reaching about 69% at full training capacity.
 
 Overall, RoBERTa demonstrates strong performance that approaches state-of-the-art (SOA) benchmarks, despite utilizing fewer computational resources and less training data compared to the SOA models. This highlights RoBERTa's efficiency and robustness for the task.
 
