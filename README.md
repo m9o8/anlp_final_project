@@ -96,7 +96,7 @@ While previous work leverages large-scale datasets and high-compute environments
 
 ---
 
-## 🎲 Random Classifier Performance
+## [🎲 Part 1: Random Classifier Performance](./code/task1.ipynb)
 
 To establish a **baseline**, we begin by evaluating the performance of several **simpler models**. These methods serve as reference points to assess the added value of more sophisticated approaches like Transformer-based architectures.
 
@@ -114,7 +114,9 @@ This progression confirms that **each added layer of linguistic complexity contr
 
 ---
 
-## 🤖 RoBERTa Model with Limited Data
+## [🤖 Part 2: RoBERTa Model with Limited Data](./code/task2.ipynb)
+
+_Discaimer: this part of the submission was created on Google Colab. The notebooks from Colab currently face an [open issue](https://github.com/googlecolab/colabtools/issues/5256#issuecomment-2795231057) on GitHub and can't often be rendered and hence properly displayed. Thus, this file has to be viewed locally._
 
  Building on the previous experiments, which showed strong performance given their simplicity, we now turn to contextual language models—specifically RoBERTa, that is designed to capture rich semantic and syntactic dependencies, which may be especially valuable for domain-specific and complex texts like patents.
 
@@ -163,13 +165,13 @@ Final results are compared against the baseline and previous models, demonstrati
 
 ---
 
-## 🎨 State of the Art Comparison
+## [🎨 Part 3: State of the Art Comparison](./code/task3.ipynb)
 
 ---
 
 ---
 
-## 💥 Model Distillation/Quantization
+## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
 
 ---
 
