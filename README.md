@@ -116,7 +116,7 @@ This progression confirms that **each added layer of linguistic complexity contr
 
 ## [🤖 Part 2: RoBERTa Model with Limited Data](./code/task2.ipynb)
 
-_Discaimer: this part of the submission was created on Google Colab. The notebooks from Colab currently face an [open issue](https://github.com/googlecolab/colabtools/issues/5256#issuecomment-2795231057) on GitHub and can't often be rendered and hence properly displayed. Thus, this file has to be viewed locally._
+_Discaimer: this part of the submission was created on Google Colab. The notebooks from Colab currently face an [open issue](https://github.com/googlecolab/colabtools/issues/5256#issuecomment-2795231057) on GitHub and can't often be rendered and hence properly displayed. We fixed the notebook, but the fix leads to HuggingFace progress bars not being displayed correctly. The GitHub version of the notebook also, doesn't support word highlighting of the `bert_interpretability_analysis()`, but this works locally._
 
  Building on the previous experiments, which showed strong performance given their simplicity, we now turn to contextual language models—specifically RoBERTa, that is designed to capture rich semantic and syntactic dependencies, which may be especially valuable for domain-specific and complex texts like patents.
 
