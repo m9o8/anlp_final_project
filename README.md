@@ -164,16 +164,17 @@ Final results are compared against the baseline and previous models, demonstrati
 - LLM-generated synthetic data (+6.96pp improvement) outperformed structural augmentation (+3.12pp), suggesting content quality matters more in our scenario than data quantity in transformer training.
 
 ---
-
 ## [🎨 Part 3: State of the Art Comparison](./code/task3.ipynb)
 
----
+
+![task3_results_test](./results/plots/task3/results_test.png)
+
+![task_3_learning_curves](./results/plots/task3/learning_curve_f1_scores.png)
+
 
 ---
-
 ## [💥 Part 4: Model Distillation/Quantization](./code/task4.ipynb)
 
----
 
 ## 📚 References
 
@@ -184,23 +185,22 @@ Final results are compared against the baseline and previous models, demonstrati
 5. <a id="ref5"></a>Yadrintsev, V., Bakarov, A., Suvorov, R., & Sochenkov, I. (2018). Fast and accurate patent classification in search engines.
 6. <a id="ref6"></a>Abdelgawad, L., et al. (2022). Optimized neural networks for patent classification.
 
----
+
 
 ## ⚙️ Project Structure
 
 ```bash
 anlp_final_project/
-├── code/                           # Jupyter Notebooks for each exercise
-│   ├── 📓 task1.ipynb                # Solution to Part 1 
-│   │── 📓 task2.ipynb                # Solution to Part 2  
-│   │── 📓 task3.ipynb                # Solution to Part 3  
-│   │── 📓 task4.ipynb                # Solution to Part 4
-├── src/                            # Python helper function
-│   ├── utils.py
-├── results/                        # Plots and model evaluations
+├── code/                       # Jupyter Notebooks for each exercise
+│   ├── 📓 task1.ipynb          # Solution to Part 1 
+│   │── 📓 task2.ipynb          # Solution to Part 2  
+│   │── 📓 task3.ipynb          # Solution to Part 3  
+│   │── 📓 task4.ipynb          # Solution to Part 4
+│   │── 🧰 utils.py             # Solution to Part 4
+├── results/                    # Plots and model evaluations
 │   ├── plots/
-├── uv.lock
-├── pyproject.toml
-├── .python-version
-└── README.md
+├── uv.lock                     # Environment UV lock file
+├── pyproject.toml              # Environment UV dependencies
+├── .python-version             # Environment UV python version
+└── README.md                   # Executive summary
 ````
