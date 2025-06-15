@@ -190,11 +190,11 @@ Final results are compared against the baseline and previous models, demonstrati
 
 ```bash
 anlp_final_project/
-├── code/                      # Jupyter Notebooks for each exercise
-│   ├── 📓 task1.ipynb
-│   │── 📓 task2.ipynb
-│   │── 📓 task3.ipynb
-│   │── 📓 task4.ipynb
+├── code/                           # Jupyter Notebooks for each exercise
+│   ├── 📓 task1.ipynb                # Solution to Part 1 
+│   │── 📓 task2.ipynb                # Solution to Part 2  
+│   │── 📓 task3.ipynb                # Solution to Part 3  
+│   │── 📓 task4.ipynb                # Solution to Part 4
 ├── src/                            # Python helper function
 │   ├── utils.py
 ├── results/                        # Plots and model evaluations
