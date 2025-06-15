@@ -166,9 +166,6 @@ Final results are compared against the baseline and previous models, demonstrati
 ---
 ## [🎨 Part 3: State of the Art Comparison](./code/task3.ipynb)
 
-
-![task3_results_test](./results/plots/task3/results_test.png)
-
 ![task_3_learning_curves](./results/plots/task3/learning_curve_f1_scores.png)
 
 
